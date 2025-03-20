@@ -32,10 +32,13 @@ This project is a **chat application** that allows real-time messaging between u
     MONGODB_URI=mongodb+srv://biswadipchowdhury114:rA9p04M0Zli7dh6X@cluster0.10jen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
     JWT_SECRET=akjdnakdnakldnadnadn
 
-5. 🎨 Styling
-   The frontend uses Tailwind CSS for styling.
-   Components are designed with a responsive layout for a seamless user experience.
+## 🎨 Styling
+- 🔹 The frontend uses Tailwind CSS for styling.
+- 🔹 Components are designed with a responsive layout for a seamless user experience.
 
-6. 🤝 Contributing
-   Feel free to fork the repository and submit a pull request! 😊
-    
+## 🤝 Contributing
+- 🔹 Feel free to fork this project and submit pull requests. Contributions are welcome! 🎉
+
+## 📜 License
+- 🔹 This project is MIT Licensed.
+
