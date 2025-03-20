@@ -14,7 +14,7 @@ This project is a **chat application** that allows real-time messaging between u
 1. **Clone the repository**  
    ```sh
    git clone https://github.com/Biswadip125/Chat_App_Advanced.git
-   cd chat-app-server
+   cd Chat_App_Advanced
    
 2. **Install Dependencies**
     ```sh
