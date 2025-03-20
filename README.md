@@ -20,7 +20,7 @@ This project is a **chat application** that allows real-time messaging between u
 3. **Install Dependencies**
    
     ```sh
-    git clone https://github.com/your-repo/chat-app-server.git
+    npm i
 
 5. ▶️ Running the Server
     **Start the server**
