@@ -11,22 +11,26 @@ This project is a **chat application** that allows real-time messaging between u
 ## 🚀 Getting Started
 
 ### 📦 Installation
-1. **Clone the repository**  
+1. **Clone the repository**
+   
    ```sh
    git clone https://github.com/Biswadip125/Chat_App_Advanced.git
    cd Chat_App_Advanced
    
-2. **Install Dependencies**
+3. **Install Dependencies**
+   
     ```sh
     git clone https://github.com/your-repo/chat-app-server.git
 
-3. ▶️ Running the Server
+5. ▶️ Running the Server
     **Start the server**
+
     ```sh
    npm start
 
-4. 🔧 Configuration
+7. 🔧 Configuration
    **Create a .env file in the root directory and add the following:**
+
     ````sh
     PORT=3000
     MONGODB_URI=mongodb+srv://biswadipchowdhury114:rA9p04M0Zli7dh6X@cluster0.10jen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
