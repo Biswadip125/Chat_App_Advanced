@@ -14,7 +14,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8080;
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://chat-app-mern-5li6.onrender.com",
   credentials: true,
 };
 
@@ -59,3 +59,4 @@ server.listen(PORT, async () => {
 
   console.log(`server is running on PORT ${PORT}`);
 });
+
