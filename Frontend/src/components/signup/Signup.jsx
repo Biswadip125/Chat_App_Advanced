@@ -20,8 +20,8 @@ const Signup = () => {
   });
 
   const [showEye, setShowEye] = useState({
-    password: false,
-    confirmPassword: false,
+    password: true,
+    confirmPassword: true,
   });
   const [isFocused, setIsFocused] = useState({
     password: false,
@@ -47,18 +47,19 @@ const Signup = () => {
         toast.success(message);
         dispatch(setAuthUser(usersData));
         navigate("/");
+        setUser({
+          fullname: "",
+          username: "",
+          password: "",
+          confirmPassword: "",
+          gender: "",
+        });
       }
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);
     }
-    setUser({
-      fullname: "",
-      username: "",
-      password: "",
-      confirmPassword: "",
-      gender: "",
-    });
+    
   };
   return (
     <div className="text-black min-w-96 mx-auto">
@@ -103,7 +104,7 @@ const Signup = () => {
               <input
                 className="w-full input input-bordered text-white h-10"
                 placeholder="Enter your password"
-                type="password"
+                type={showEye.password ? "password" : "text"}
                 value={user.password}
                 onFocus={() =>
                   setIsFocused((prev) => ({ ...prev, password: true }))
@@ -143,7 +144,7 @@ const Signup = () => {
               <input
                 className="w-full input input-bordered text-white h-10"
                 placeholder="Re enter the password"
-                type="password"
+                type={showEye.confirmPassword ? "password" : "text"}
                 value={user.confirmPassword}
                 onFocus={() =>
                   setIsFocused((prev) => ({ ...prev, confirmPassword: true }))

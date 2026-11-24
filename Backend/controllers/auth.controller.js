@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import generateToken from "../utils/generateToken.js";
+import { generateAvatar } from "../utils/generateAvatar.js";
 
 export const register = async (req, res) => {
   try {
@@ -37,25 +38,29 @@ export const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // profilePhoto
-    const maleProfilePhoto = `https://avatar.iran.liara.run/public/boy?username=${username}`;
+    // const maleProfilePhoto = `https://avatar.iran.liara.run/public/boy?username=${username}`;
 
-    const femaleProfilePhoto = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    // const femaleProfilePhoto = `https://avatar.iran.liara.run/public/girl?username=${username}`;
 
     const chatbotRegex = /^chatbot$/i;
-
+const isChatBot = chatbotRegex.test(username);
     //creating the User in DB
     const newUser = await User.create({
       fullname,
       username,
       password: hashedPassword,
-      profilePhoto: chatbotRegex.test(username)
-        ? "https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg"
-        : gender === "male"
-        ? maleProfilePhoto
-        : femaleProfilePhoto,
+      // profilePhoto: chatbotRegex.test(username)
+      //   ? "https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg"
+      //   : gender === "male"
+      //   ? maleProfilePhoto
+      //   : femaleProfilePhoto,
       gender,
     });
 
+    newUser.profilePhoto = chatbotRegex.test(username) ? "https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg" : generateAvatar(isChatBot,newUser._id, gender);
+
+    
+    await newUser.save();
     //generating the token from the function generateToken
     const token = generateToken(newUser._id);
 
